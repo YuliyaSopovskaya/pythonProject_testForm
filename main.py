@@ -1,14 +1,13 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common import by
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import random
 import string
 import pytest
 
 
-# driver = webdriver.Chrome(executable_path='/Users/Roman/PycharmProjects/pythonProject/chromedriver')
+# driver = webdriver.Chrome(executable_path='прямой путь к дровам')
 # driver.get('https://demoqa.com/text-box')
 # driver.maximize_window()
 #
