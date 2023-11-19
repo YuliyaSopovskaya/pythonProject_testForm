@@ -92,3 +92,15 @@ def test_text_box_form(driver):
     assert "Permanent Address" in submitted_text, "Permanent Address is not displayed in the output text"
 
     print(submitted_text)
+    
+    #    expected_text = (
+    #     f"Name:{textbox_page.full_name[1]}, "
+    #     f"Email:{textbox_page.email[1]}, "
+    #     f"Current Address:{textbox_page.current_address[1]}, "
+    #     f"Permanent Address:{textbox_page.permanent_address[1]}"
+    # )
+
+    # assert expected_text in submitted_text, "Expected and actual texts do not match"
+
+    # print(f"Expected text: {expected_text}")
+    # print(f"Actual text: {submitted_text}")
