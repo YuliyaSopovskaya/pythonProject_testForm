@@ -39,6 +39,15 @@ class TextBoxPage:
         self.submit_button = (By.ID, "submit")
         self.output_text = (By.ID, "output")
 
+    def wait_for_element(self, locator, timeout=10):
+        return WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_element_located(locator)
+        )
+
+    def click_submit(self):
+        submit_button = self.wait_for_element(self.submit_button)
+        submit_button.click()
+
     def open_page(self):
         self.driver.get(self.url)
 
@@ -50,14 +59,13 @@ class TextBoxPage:
         letters = string.ascii_letters
         return ''.join(random.choice(letters) for _ in range(length))
 
+    
     def fill_form(self):
         self.fill_text_box(self.full_name, self.generate_random_string(10))
         self.fill_text_box(self.email, self.generate_random_string(8) + "@example.com")
         self.fill_text_box(self.current_address, self.generate_random_string(20))
         self.fill_text_box(self.permanent_address, self.generate_random_string(20))
 
-    def click_submit(self):
-        self.driver.find_element(*self.submit_button).click()
 
     def get_output_text(self):
         return self.driver.find_element(*self.output_text).text
@@ -72,7 +80,6 @@ def driver():
 
 def test_text_box_form(driver):
     textbox_page = TextBoxPage(driver)
-
     textbox_page.open_page()
     textbox_page.fill_form()
     textbox_page.click_submit()
@@ -83,3 +90,5 @@ def test_text_box_form(driver):
     assert "Email" in submitted_text, "Email is not displayed in the output text"
     assert "Current Address" in submitted_text, "Current Address is not displayed in the output text"
     assert "Permanent Address" in submitted_text, "Permanent Address is not displayed in the output text"
+
+    print(submitted_text)
