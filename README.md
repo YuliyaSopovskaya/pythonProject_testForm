@@ -12,8 +12,8 @@
 ```bash
 pip install selenium
 pip install faker
-#установка драйвера для Chrome
-Selenium WebDriver ChromeDriver
+
+Selenium WebDriver ChromeDriver  #установка драйвера для Chrome
 pip install -r requirements.txt #создать зависимости
 
 
