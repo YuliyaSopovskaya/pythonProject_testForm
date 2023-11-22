@@ -1,3 +1,9 @@
-# pythonProject_testForm
+# Это ссылка на страницу: https://demoqa.com/text-box. 
+# Форма: Text Box.
+# На странице по ссылке есть поля с названиями: Full Name, Email, Current Address, Permanent Address.
+# Задание: Написать фрейморк для тестирования этой формы с использованием шаблон проектирования PageObject. 
+# План: Заполнить все поля рандомными данными. Нажать кнопку Submit. Сравнить введенные данные с полученными данными из поля, в котором будут все заполненные данные. 
 
-запуск: pytest main.py
+
+pip install -r requirements.txt # зависимости
+pytest main.py # запуск
